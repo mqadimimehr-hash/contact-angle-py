@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cangle"
+version = "0.1.0"
+description = "Static water contact angle from side-view sessile-drop images (circle and tangent fits)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Mohammad Ghadimimehr" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "opencv-python-headless>=4.5"]
+keywords = ["contact angle", "sessile drop", "wettability", "superhydrophobic", "goniometry"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/mqadimimehr-hash/contact-angle-py"
+Issues = "https://github.com/mqadimimehr-hash/contact-angle-py/issues"
+
+[project.scripts]
+cangle = "cangle.cli:main"
+
+[tool.setuptools]
+packages = ["cangle"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
